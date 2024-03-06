@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalog", "ProductCatalog\ProductCatalog.csproj", "{249BD103-9A22-43E9-9824-9DD863764A1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductCatalogFuncApp", "ProductCatalogFuncApp\ProductCatalogFuncApp.csproj", "{DE20F8FC-7660-4E44-A077-F54AB6855C7F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{249BD103-9A22-43E9-9824-9DD863764A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{249BD103-9A22-43E9-9824-9DD863764A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{249BD103-9A22-43E9-9824-9DD863764A1F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DE20F8FC-7660-4E44-A077-F54AB6855C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE20F8FC-7660-4E44-A077-F54AB6855C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE20F8FC-7660-4E44-A077-F54AB6855C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE20F8FC-7660-4E44-A077-F54AB6855C7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
