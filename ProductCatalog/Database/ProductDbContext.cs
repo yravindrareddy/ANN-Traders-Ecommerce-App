@@ -1,7 +1,5 @@
-﻿using ProductCatalog.Entities;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductCatalog.Entities;
 
 namespace ProductCatalog.Database
 {
