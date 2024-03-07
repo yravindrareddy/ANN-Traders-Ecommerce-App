@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProductCatalog.Database;
 using ProductCatalog.Entities;
