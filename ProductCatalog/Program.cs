@@ -1,6 +1,7 @@
 using ProductCatalog.Database;
 using ProductCatalog.Repositories;
 using Microsoft.EntityFrameworkCore;
+using ServiceBus;
 
 namespace ProductCatalog
 {
@@ -28,6 +29,7 @@ namespace ProductCatalog
             });
             
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IMessageBus, MessageBus>();
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             builder.Services.AddSwaggerGen();
 

@@ -6,6 +6,7 @@ using ProductCatalog.Database;
 using ProductCatalog.Entities;
 using ProductCatalog.Models;
 using ProductCatalog.Repositories;
+using ServiceBus;
 
 namespace ProductCatalog.Controllers
 {
@@ -17,13 +18,15 @@ namespace ProductCatalog.Controllers
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
         private readonly IConfiguration _configuration;
+        private readonly IMessageBus _messageBus;
 
-        public ProductController(ProductDbContext dbContext, IProductRepository productRepository, IMapper mapper, IConfiguration configuration)
+        public ProductController(ProductDbContext dbContext, IProductRepository productRepository, IMapper mapper, IConfiguration configuration, IMessageBus messageBus)
         {
             _dbContext = dbContext;            
             _productRepository = productRepository;
             _mapper = mapper;
             _configuration = configuration;
+            _messageBus = messageBus;
         }
 
         [HttpGet]
@@ -74,7 +77,7 @@ namespace ProductCatalog.Controllers
             await _productRepository.AddProduct(product);
             await UploadImage(createProductDto.Image, imageName);
 
-            //await _messageBus.PublishMessage(product, _configuration["MessageBus:QueueName"]);
+            await _messageBus.PublishMessage(_configuration["ServiceBus:AZURE_SERVCIE_BUS_CONN"], product, _configuration["ServiceBus:QueueName"]);
             return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);
         }
 
