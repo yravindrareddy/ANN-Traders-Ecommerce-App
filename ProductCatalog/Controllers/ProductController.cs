@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProductCatalog.Database;
 using ProductCatalog.Entities;
@@ -10,6 +11,7 @@ using ServiceBus;
 
 namespace ProductCatalog.Controllers
 {
+    //[Authorize]
     [Route("[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
@@ -193,6 +195,7 @@ namespace ProductCatalog.Controllers
                 Price = product.Price,
                 CategoryId = product.CategoryId,
                 CategoryName = product.Category.Name,
+                AvailableStock = product.AvailableStock,
                 ImageUrl = $"{_configuration["BlobStorageUrl"]}{product.ImageFileName}"
             };
         }

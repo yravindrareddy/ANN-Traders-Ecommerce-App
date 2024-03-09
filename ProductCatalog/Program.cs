@@ -24,8 +24,8 @@ namespace ProductCatalog
             });
             builder.Services.AddAuthentication("Bearer").AddJwtBearer(options =>
             {
-                options.Audience = "api://b5652012-1efb-4c6f-8cef-4e35d6ca33c6";
-                options.Authority = "https://login.microsoftonline.com/e504ade5-ffda-4c8d-ae63-7fdd2d273a8c";
+                options.Audience = "api://2e8d6e7a-74a7-4501-941f-d19fe3a67c70";
+                options.Authority = "https://login.microsoftonline.com/a196b8f9-5d27-489e-9107-c3a43d880930";
             });
             
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
