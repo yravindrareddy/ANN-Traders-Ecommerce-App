@@ -43,6 +43,7 @@ namespace ProductSearch.Controllers
                 Price = product.Price,
                 CategoryId = product.CategoryId,
                 CategoryName = product.Category.Name,
+                AvailableStock = product.AvailableStock,
                 ImageUrl = $"{_configuration["BlobStorageUrl"]}{product.ImageFileName}"
             };
         }
