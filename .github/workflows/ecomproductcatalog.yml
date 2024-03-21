@@ -3,6 +3,8 @@ on:
   push:
     branches:
     - master
+    paths:
+    - 'ProductCatalog/**'
 env:
   AZURE_WEBAPP_NAME: ecomproductcatalog
   AZURE_WEBAPP_PACKAGE_PATH: .\published
