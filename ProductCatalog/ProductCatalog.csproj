@@ -32,4 +32,10 @@
     <ProjectReference Include="..\ServiceBusClient\ServiceBus.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="ProductCatalog.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
