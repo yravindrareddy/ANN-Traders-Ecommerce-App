@@ -10,5 +10,7 @@ namespace ProductCatalog.Repositories
         Task UpdateProduct(Product product);
         void DeleteProduct(Product product);        
         Task<IEnumerable<Category>> GetCategories();
+        Task<IEnumerable<Product>> SearchProductsByCategory(int CategoryId, string searchText);
+        Task<IEnumerable<Product>> SearchProducts(string searchText);
     }
 }

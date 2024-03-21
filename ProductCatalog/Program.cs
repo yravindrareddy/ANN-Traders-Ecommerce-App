@@ -16,7 +16,7 @@ namespace ProductCatalog
             builder.Services.AddControllers();
             builder.Services.AddDbContext<ProductDbContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING"));
+                options.UseSqlite(builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING"));
             });
             builder.Services.AddCors(options =>
             {

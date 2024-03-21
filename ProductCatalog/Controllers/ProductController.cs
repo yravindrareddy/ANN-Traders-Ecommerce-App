@@ -79,7 +79,7 @@ namespace ProductCatalog.Controllers
             await _productRepository.AddProduct(product);
             await UploadImage(createProductDto.Image, imageName);
 
-            await _messageBus.PublishMessage(_configuration["ServiceBus:AZURE_SERVCIE_BUS_CONN"], product, _configuration["ServiceBus:QueueName"]);
+            //await _messageBus.PublishMessage(_configuration["ServiceBus:AZURE_SERVCIE_BUS_CONN"], product, _configuration["ServiceBus:QueueName"]);
             return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);
         }
 

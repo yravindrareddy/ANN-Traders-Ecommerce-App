@@ -54,5 +54,17 @@ namespace ProductCatalog.Repositories
             }
             await _dbContext.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<Product>> SearchProducts(string searchText)
+        {
+            return await _dbContext.Products.Include(p => p.Category).Where(p => p.Name.ToLower().Contains(searchText.ToLower()) ||
+            p.Description.ToLower().Contains(searchText.ToLower())).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Product>> SearchProductsByCategory(int CategoryId, string searchText)
+        {
+            return await _dbContext.Products.Include(p => p.Category).Where(p => p.CategoryId == CategoryId && (p.Name.ToLower().Contains(searchText.ToLower()) ||
+            p.Description.ToLower().Contains(searchText.ToLower()))).ToListAsync();
+        }
     }
 }
